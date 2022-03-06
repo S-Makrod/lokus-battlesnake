@@ -1,6 +1,7 @@
 package com.battlesnake.lokus.controller;
 
 import com.battlesnake.codegen.models.*;
+import com.battlesnake.lokus.service.MoveService;
 import com.battlesnake.lokus.service.SettingsService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -15,6 +16,7 @@ import javax.servlet.http.HttpServletRequest;
 @Slf4j
 public class SnakeController {
   private final SettingsService settingsService;
+  private final MoveService moveService;
 
   @GetMapping(value = "", produces = "application/json")
   public ResponseEntity<SettingsSchema> getCustomization(HttpServletRequest request){
@@ -29,7 +31,7 @@ public class SnakeController {
 
   @PostMapping(value = "/move", produces = "application/json")
   public ResponseEntity<POSTMoveResponseSchema> postMove(@RequestBody POSTMoveRequestSchema postMoveRequestSchema){
-      return ResponseEntity.ok(new POSTMoveResponseSchema());
+      return ResponseEntity.ok(moveService.decisionMaker(postMoveRequestSchema));
   }
 
   @PostMapping(value = "/end", produces = "application/json")
