@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://battlesnake.lokus.com/battlesnake.schema.json",
+  "title": "Battle Snake Schema",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "health": {
+      "type": "number"
+    },
+    "body": {
+      "type": "array",
+      "items": {
+        "$ref": "./coordinate.schema.json"
+      }
+    },
+    "latency": {
+      "type": "string"
+    },
+    "head": {
+      "$ref": "./coordinate.schema.json"
+    },
+    "length": {
+      "type": "number"
+    },
+    "shout": {
+      "type": "string"
+    },
+    "squad": {
+      "type": "string"
+    },
+   "customizations": {
+     "$ref": "./settings.schema.json"
+   }
+  }
+}

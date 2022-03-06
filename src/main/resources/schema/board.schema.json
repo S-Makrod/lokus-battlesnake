@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://battlesnake.lokus.com/board.schema.json",
+  "title": "Board Schema",
+  "type": "object",
+  "properties": {
+    "height": {
+      "type": "number"
+    },
+    "width": {
+      "type": "number"
+    },
+    "food": {
+      "type": "array",
+      "items": {
+        "$ref": "./coordinate.schema.json"
+      }
+    },
+    "hazards": {
+      "type": "array",
+      "items": {
+        "$ref": "./coordinate.schema.json"
+      }
+    },
+    "snakes": {
+      "type": "array",
+      "items": {
+        "$ref": "./battlesnake.schema.json"
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://battlesnake.lokus.com/board.schema.json",
+  "title": "POST End Response Schema",
+  "type": "object",
+  "properties": {
+    "game": {
+      "$ref": "./game.schema.json"
+    },
+    "turn": {
+      "type": "number"
+    },
+    "board": {
+      "$ref": "./board.schema.json"
+    },
+    "you": {
+      "$ref": "./battlesnake.schema.json"
+    }
+  }
+}

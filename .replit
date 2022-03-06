@@ -1,0 +1,2 @@
+language = "java8"
+run = "mvn clean install spring-boot:run"

@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://battlesnake.lokus.com/board.schema.json",
+  "title": "Ruleset Settings Schema",
+  "type": "object",
+  "properties": {
+    "foodSpawnChance": {
+      "type": "number"
+    },
+    "minimumFood": {
+      "type": "number"
+    },
+    "hazardDamagePerTurn": {
+      "type": "number"
+    },
+    "map": {
+      "type": "string"
+    },
+    "royal": {
+      "type": "object",
+      "properties": {
+        "shrinkEveryNTurns": {
+          "type": "number"
+        }
+      }
+    },
+    "squad": {
+      "type": "object",
+      "properties": {
+        "allowBodyCollisions": {
+          "type": "boolean"
+        },
+        "sharedElimination": {
+          "type": "boolean"
+        },
+        "sharedHealth": {
+          "type": "boolean"
+        },
+        "sharedLength": {
+          "type": "boolean"
+        }
+      }
+    }
+  }
+}
